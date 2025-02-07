@@ -62,4 +62,21 @@ function addColleague(cs: Colleague[], name: string, department: string, email: 
   
   console.log(findFriends(friends, (f) => f.name.startsWith('Pa')));
   console.log(findFriends(friends, (f) => f.age < 35));
+
+  function addInterest(friend: Friend, interest: string): string[] {
+    if (!friend.interests) {
+      friend.interests = []; // Initialize if undefined
+    }
+    
+    if (!friend.interests.includes(interest)) {
+        friend.interests.push(interest);
+    }
+    
+    
+      return friend.interests;
+  }
+  
+  // Test case
+  console.log(addInterest(friends[1], "Politics"));
+  
   
